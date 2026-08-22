@@ -1,0 +1,5 @@
+.venv
+.vscode
+mp4.egg-info
+*.mp4
+*.mp3

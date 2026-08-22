@@ -19,3 +19,8 @@ uv venv
 ```
 uv pip sync requirements.txt
 ```
+
+# Como lo compilo?
+```
+uvx --with yt-dlp pyinstaller --onefile Downloader.py
+```

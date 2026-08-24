@@ -42,13 +42,19 @@ def descargarMP4(URL):
 # Verificar url
 def verificarURL(URL):
     print("Verificando URL...")
-    configuracion = {"quiet": True, "no_warnings": True}
+    configuracion = {
+        "quiet": True,
+        "no_warnings": True,
+        "extract_flat": True,
+        "skip_download": True,
+    }
 
     try:
         with yt_dlp.YoutubeDL(configuracion) as ydl:
             info = ydl.extract_info(URL, download=False)
             if info:
                 print("URL Valido")
+                print('Titulo:', info.get('title'))
                 return True
     except yt_dlp.utils.DownloadError:
         print("La URL no es valida, no existe o es inaccesible.")
